@@ -246,6 +246,7 @@ Thank you,
             <p data-i18n="feedbackIntro">Send a question about your application, ask for document help, or share feedback. We can reply to your email.</p>
           </div>
           <form id="feedback-form">
+            <label class="honeypot" aria-hidden="true">Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
             <div class="feedback-fields">
               <label for="feedback-name"><span data-i18n="feedbackName">Your name</span><input id="feedback-name" name="name" type="text" autocomplete="name" maxlength="100" required /></label>
               <label for="feedback-email"><span data-i18n="feedbackEmail">Email address</span><input id="feedback-email" name="email" type="email" autocomplete="email" maxlength="254" required /></label>

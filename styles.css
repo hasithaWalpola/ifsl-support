@@ -208,6 +208,7 @@ h1 em, .support-inner h2 em { color: var(--blue); font-weight: 500; }
 .feedback-fields input, .feedback-fields select, .feedback-fields textarea { width: 100%; min-height: 44px; border: 1px solid #b7c9d4; border-radius: 3px; padding: 10px 12px; color: var(--ink); background: #fff; font: inherit; font-size: 13px; }
 .feedback-fields textarea { min-height: 110px; resize: vertical; }
 .feedback-fields input:focus, .feedback-fields textarea:focus { border-color: var(--blue); outline: 2px solid rgb(60 141 188 / 18%); }
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .feedback-message { grid-column: 1 / -1; }
 .feedback-privacy { margin: 12px 0; color: var(--muted); font-size: 10px; }
 .feedback-submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }

@@ -4,6 +4,19 @@
 
 Use Node.js 22.13 or newer, then run `npm start` and open the URL printed in the terminal.
 
+## Free GitHub Pages + Google Sheets hosting
+
+GitHub Pages serves the static site. Google Apps Script receives support requests and writes them, plus anonymous usage counts, to a private Google spreadsheet.
+
+1. Create a Google Sheet and keep its sharing access private.
+2. In that sheet, open **Extensions > Apps Script**. Replace the script contents with `apps-script/Code.gs` and save.
+3. Choose **Deploy > New deployment > Web app**. Set **Execute as** to yourself and **Who has access** to anyone, then deploy and authorize it. Copy the web app URL ending in `/exec`.
+4. Paste that URL into `GOOGLE_SHEETS_ENDPOINT` at the top of `app.js`, commit and push the change to `main`.
+5. In GitHub, open **Settings > Pages** and select **GitHub Actions** as the source if it is not already selected. The workflow in `.github/workflows/pages.yml` deploys on each push to `main`.
+6. When the Actions workflow succeeds, open `https://hasithawalpola.github.io/ifsl-support/`.
+
+The Apps Script URL is public configuration, not a password. The spreadsheet itself should remain private. Until the endpoint is set, the contact form displays a setup message and no requests are sent. GitHub Pages has no Node server or SQLite; use the Render instructions below instead if you prefer the existing SQLite backend.
+
 ## Host on Render
 
 1. Push this project to a GitHub repository.

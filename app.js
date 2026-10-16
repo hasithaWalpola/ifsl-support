@@ -1,4 +1,5 @@
 const SUPPORT_WHATSAPP_NUMBER = "";
+const GOOGLE_SHEETS_ENDPOINT = "";
 const checklistStorageKey = "loan-ready-ifsls-checklist-v1";
 const languageStorageKey = "loan-ready-language";
 const maximumPhotosPerDocument = 8;
@@ -116,6 +117,7 @@ const translations = {
     feedbackSending: "Sending your feedback…",
     feedbackSuccess: "Thank you. Your feedback has been received.",
     feedbackError: "We could not send your feedback. Please try again later.",
+    feedbackSetupRequired: "Support form setup is not complete yet. Please contact the administrator.",
     supportEyebrow: "STILL NEED HELP?",
     supportTitle: "Need help? Ask a question.",
     supportText: "Use the contact form for application questions or document help. Do not send private documents over WhatsApp.",
@@ -248,6 +250,7 @@ const translations = {
     feedbackSending: "ඔබේ අදහස යවමින්…",
     feedbackSuccess: "ස්තුතියි. ඔබේ අදහස ලැබුණා.",
     feedbackError: "අදහස යැවීමට නොහැකි විය. පසුව නැවත උත්සාහ කරන්න.",
+    feedbackSetupRequired: "සහාය පෝරමය තවම සකස් කර නැත. පරිපාලක අමතන්න.",
     supportEyebrow: "තවමත් උදව් අවශ්‍යද?",
     supportTitle: "උදව් අවශ්‍යද? අපෙන් අසන්න.",
     supportText: "අයදුම්පත් ප්‍රශ්න හෝ ලේඛන සහාය සඳහා සම්බන්ධතා පෝරමය භාවිත කරන්න. පුද්ගලික ලේඛන WhatsApp හරහා නොයවන්න.",
@@ -380,6 +383,7 @@ const translations = {
     feedbackSending: "உங்கள் கருத்து அனுப்பப்படுகிறது…",
     feedbackSuccess: "நன்றி. உங்கள் கருத்து கிடைத்தது.",
     feedbackError: "கருத்தை அனுப்ப முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்.",
+    feedbackSetupRequired: "ஆதரவு படிவம் இன்னும் அமைக்கப்படவில்லை. நிர்வாகியைத் தொடர்புகொள்ளவும்.",
     supportEyebrow: "இன்னும் உதவி தேவையா?",
     supportTitle: "உதவி தேவையா? கேளுங்கள்.",
     supportText: "விண்ணப்பக் கேள்விகள் அல்லது ஆவண உதவிக்கு தொடர்புப் படிவத்தைப் பயன்படுத்தவும். தனிப்பட்ட ஆவணங்களை WhatsApp வழியாக அனுப்ப வேண்டாம்.",
@@ -544,10 +548,17 @@ function imageToJpeg(file) {
 }
 
 function recordUsage(eventName, documentType = "") {
-  fetch("/api/usage", {
+  if (!GOOGLE_SHEETS_ENDPOINT) return;
+  const parameters = new URLSearchParams({
+    type: "usage",
+    event: eventName,
+    language: currentLanguage,
+    documentType,
+  });
+  fetch(GOOGLE_SHEETS_ENDPOINT, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event: eventName, language: currentLanguage, documentType }),
+    mode: "no-cors",
+    body: parameters,
     keepalive: true,
   }).catch(() => {});
 }
@@ -736,12 +747,25 @@ document.querySelector("#feedback-form").addEventListener("submit", async (event
   status.textContent = text("feedbackSending");
 
   try {
-    const response = await fetch("/api/feedback", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    if (!GOOGLE_SHEETS_ENDPOINT) {
+      status.textContent = text("feedbackSetupRequired");
+      status.classList.add("is-error");
+      return;
+    }
+    const formData = new FormData(form);
+    const parameters = new URLSearchParams({
+      type: "feedback",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      category: formData.get("category"),
+      feedback: formData.get("feedback"),
+      website: formData.get("website"),
     });
-    if (!response.ok) throw new Error("Feedback request was rejected.");
+    await fetch(GOOGLE_SHEETS_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      body: parameters,
+    });
     form.reset();
     status.textContent = text("feedbackSuccess");
     status.classList.add("is-success");
