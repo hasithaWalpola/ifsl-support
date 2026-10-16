@@ -1,0 +1,13 @@
+{
+  "name": "ifsls-student-support",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Student guide, photo-to-PDF helper, and local feedback/usage database for IFSLS applicants",
+  "scripts": {
+    "start": "node server.js",
+    "export:feedback": "node export-feedback.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

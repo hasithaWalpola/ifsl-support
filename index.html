@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A practical student-made guide to applying for Sri Lanka's Interest Free Student Loan Scheme and preparing for the online interview."
+    />
+    <meta name="theme-color" content="#3c8dbc" />
+    <title>IFSLS Student Guide | Loan Ready</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="vendor/jspdf.umd.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="IFSLS student support home">
+        <img src="logo.svg" alt="IFSL Support" />
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#steps" data-i18n="navSteps">Application steps</a>
+        <a href="#documents" data-i18n="navDocuments">Interview documents</a>
+        <a href="#support" data-i18n="navSupport">Get support</a>
+      </nav>
+      <label class="language-control" for="language-select">
+        <span data-i18n="languageLabel">Language</span>
+        <select id="language-select" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="si">සිංහල</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+      </label>
+    </header>
+
+    <main id="top">
+      <section class="intro section-wrap" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="heroEyebrow">A practical guide for applicants</span></p>
+          <h1 id="page-title" data-i18n="heroTitle">Your IFSLS application, one step at a time.</h1>
+          <p class="intro-lede" data-i18n="heroIntro">
+            Clear next steps for Sri Lanka's Interest Free Student Loan Scheme, from checking your eligibility to getting ready for the interview.
+          </p>
+          <div class="intro-actions">
+            <a class="button button-primary" href="https://studentloans.mohe.gov.lk/" target="_blank" rel="noreferrer">
+              <span data-i18n="openPortal">Open the official portal</span> <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#documents"><span data-i18n="goDocuments">Prepare interview documents</span> <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="edition-note" data-i18n="editionNote">Based on the official 2026/27 handbook and the interview email shared with this guide.</p>
+        </div>
+        <figure class="intro-photo">
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85"
+            alt="A student writing notes while preparing study documents"
+          />
+          <figcaption><span>01 / GET READY</span> <span data-i18n="photoCaption">A little preparation makes the next step clearer.</span></figcaption>
+        </figure>
+        <div class="intro-rule" aria-hidden="true"><span>IFSLS</span><span>STUDENT FIELD GUIDE</span><span>2026 / 27</span></div>
+      </section>
+
+      <section class="eligibility-band" aria-labelledby="eligibility-title">
+        <div class="section-wrap eligibility-inner">
+          <div class="eligibility-heading">
+            <p class="eyebrow eyebrow-light" data-i18n="eligibilityEyebrow">START HERE</p>
+            <h2 id="eligibility-title" data-i18n="eligibilityTitle">Check the basics before you apply.</h2>
+            <a class="light-link" href="https://studentloans.mohe.gov.lk/loan_application/asset/documents/student_guide_book_english.pdf" target="_blank" rel="noreferrer">
+              <span data-i18n="readHandbook">Read the official student handbook</span> <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="eligibility-points">
+            <article>
+              <span class="point-index">01</span>
+              <div><h3 data-i18n="eligibilityYearTitle">Check your A/L year</h3><p data-i18n="eligibilityYearText">The 2026/27 handbook covers Sri Lankan G.C.E. A/L candidates from 2023, 2024, or 2025 who qualify for university entrance.</p></div>
+            </article>
+            <article>
+              <span class="point-index">02</span>
+              <div><h3 data-i18n="eligibilityBaseTitle">Check general requirements</h3><p data-i18n="eligibilityBaseText">Three S passes in one sitting, within three sittings; at least 30 for the Common General Test within three sittings; an S pass in A/L General English or O/L English Language; and age 25 or below on 27 September 2026.</p></div>
+            </article>
+            <article>
+              <span class="point-index">03</span>
+              <div><h3 data-i18n="eligibilityCourseTitle">Check your chosen degree</h3><p data-i18n="eligibilityCourseText">Every degree has its own entry requirements. Selection also depends on preferences, available seats and, when oversubscribed, A/L Z-score.</p></div>
+            </article>
+            <p class="eligibility-caveat" data-i18n="eligibilityCaveat">Requirements can change by intake. Confirm the current notice and the exact degree requirements in the official handbook before submitting.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps-section section-wrap" id="steps" aria-labelledby="steps-title">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-i18n="stepsEyebrow">THE APPLICATION</p><h2 id="steps-title" data-i18n="stepsTitle">From registration to interview</h2></div>
+          <span class="section-aside" data-i18n="stepsAside">Keep the same email address throughout your studies.</span>
+        </div>
+        <ol class="steps-list">
+          <li><span class="step-number">01</span><div class="step-content"><h3 data-i18n="step1Title">Register on the official portal</h3><p data-i18n="step1Text">Use the applicant's NIC number used for A/L and the relevant A/L index number. The handbook says your password is sent to your email.</p><a href="https://studentloans.mohe.gov.lk/" target="_blank" rel="noreferrer" data-i18n="step1Link">Go to official portal ↗</a></div></li>
+          <li><span class="step-number">02</span><div class="step-content"><h3 data-i18n="step2Title">Read the handbook, then complete the form</h3><p data-i18n="step2Text">Enter your details carefully, review degree-specific requirements and preferences, and submit the online application before the intake deadline.</p><a href="https://studentloans.mohe.gov.lk/loan_application/asset/documents/student_guide_book_english.pdf" target="_blank" rel="noreferrer" data-i18n="step2Link">Open the English handbook ↗</a></div></li>
+          <li><span class="step-number">03</span><div class="step-content"><h3 data-i18n="step3Title">Save and print your submitted application</h3><p data-i18n="step3Text">Keep a copy of what you submitted. For an interview, sign the printed application and complete the school-candidate certificate or external-candidate affidavit on its last page.</p></div></li>
+          <li><span class="step-number">04</span><div class="step-content"><h3 data-i18n="step4Title">Watch for your interview invitation</h3><p data-i18n="step4Text">The handbook says interview calls are sent by email and published on the Ministry website. Your own invitation gives the date, time and Microsoft Teams link.</p></div></li>
+          <li><span class="step-number">05</span><div class="step-content"><h3 data-i18n="step5Title">Email your scans before the interview</h3><p data-i18n="step5Text">Follow your invitation. The email shared for this guide asks for the named scans to be sent one hour before the interview.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="documents-section" id="documents" aria-labelledby="documents-title">
+        <div class="section-wrap">
+          <div class="section-heading documents-heading">
+            <div><p class="eyebrow" data-i18n="documentsEyebrow">YOUR INTERVIEW PACK</p><h2 id="documents-title" data-i18n="documentsTitle">Prepare each document</h2></div>
+            <p class="section-aside" data-i18n="checklistHint">Tick each item when it is ready. Add photos under the matching document.</p>
+          </div>
+          <div class="upload-guide" aria-labelledby="upload-guide-title">
+            <div class="upload-guide-title"><span class="upload-guide-icon" aria-hidden="true">1-2-3</span><h3 id="upload-guide-title" data-i18n="pdfHowTitle">Make a PDF from your photos</h3></div>
+            <ol class="upload-steps">
+              <li data-i18n="pdfHowStep1">Choose the document you want to prepare.</li>
+              <li data-i18n="pdfHowStep2">Tap “Choose photos” and select one or more clear pictures.</li>
+              <li data-i18n="pdfHowStep3">Tap “Create PDF”. The named file downloads to your device.</li>
+            </ol>
+            <p class="privacy-note"><span aria-hidden="true">●</span> <span data-i18n="privacyNote">Your photos stay on this device. They are not uploaded to this website.</span></p>
+          </div>
+          <section class="rename-tool" aria-labelledby="rename-title">
+            <div class="rename-intro"><p class="eyebrow" data-i18n="renameEyebrow">ALREADY HAVE A FILE?</p><h3 id="rename-title" data-i18n="renameTitle">Rename it and download a copy</h3><p data-i18n="renameIntro">Choose a document, enter the name you want, then download it. The file itself is not changed.</p></div>
+            <div class="rename-fields">
+              <label class="rename-field" for="rename-file"><span data-i18n="renameChooseLabel">Choose your file</span><input id="rename-file" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.ppt,.pptx" /></label>
+              <label class="rename-field" for="rename-name"><span data-i18n="renameNameLabel">New file name</span><span class="rename-name-control"><input id="rename-name" type="text" maxlength="100" placeholder="e.g. NIC" data-i18n-placeholder="renamePlaceholder" /><span id="rename-extension"></span></span></label>
+              <button class="create-pdf rename-download" id="rename-download" type="button" disabled data-i18n="renameDownload">Download renamed file</button>
+            </div>
+            <p class="rename-status" id="rename-status" role="status" aria-live="polite" data-i18n="renamePrivacy">Your file stays on this device. It is not uploaded.</p>
+          </section>
+          <div class="checklist-toolbar">
+            <p><span id="checklist-count">0 of 10 ready</span><span class="progress-track"><span id="progress-fill"></span></span></p>
+            <button class="reset-button" id="reset-checklist" type="button" data-i18n="resetChecklist">Reset checklist</button>
+          </div>
+          <ol class="document-list" id="document-list">
+            <li class="document-item" data-document="application" data-file-name="Application">
+              <label class="document-check"><input type="checkbox" data-item="application" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docApplication">Signed online application</strong><small data-i18n="detailApplication">Print the submitted form and sign it.</small></span><code>Application.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="application" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="application" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="application" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="application" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="application-1" data-file-name="Application 1">
+              <label class="document-check"><input type="checkbox" data-item="application-1" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docApplication1">Principal's certificate or affidavit</strong><small data-i18n="detailApplication1">School applicant: signed principal's certificate. External applicant: affidavit certified by a JP or Commissioner of Oaths.</small></span><code>Application 1.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="application-1" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="application-1" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="application-1" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="application-1" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="nic" data-file-name="NIC">
+              <label class="document-check"><input type="checkbox" data-item="nic" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docNic">NIC or valid passport</strong><small data-i18n="detailNic">Choose a clear photo of your identity document.</small></span><code>NIC.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="nic" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="nic" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="nic" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="nic" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="al" data-file-name="AL">
+              <label class="document-check"><input type="checkbox" data-item="al" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docAl">G.C.E. A/L certificates</strong><small data-i18n="detailAl">Include the A/L certificate and the certificate for the year you passed the Common General Test.</small></span><code>AL.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="al" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="al" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="al" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="al" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="ol" data-file-name="OL">
+              <label class="document-check"><input type="checkbox" data-item="ol" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docOl">G.C.E. O/L certificate</strong><small data-i18n="detailOriginal">Choose a clear photo of the original certificate.</small></span><code>OL.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="ol" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="ol" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="ol" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="ol" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="school-leaving" data-file-name="SL">
+              <label class="document-check"><input type="checkbox" data-item="school-leaving" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docSchoolLeaving">School leaving certificate</strong><small data-i18n="detailOriginal">Choose a clear photo of the original certificate.</small></span><code>SL.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="school-leaving" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="school-leaving" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="school-leaving" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="school-leaving" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="birth" data-file-name="BC">
+              <label class="document-check"><input type="checkbox" data-item="birth" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docBirth">Birth certificate</strong><small data-i18n="detailOriginal">Choose a clear photo of the original certificate.</small></span><code>BC.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="birth" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="birth" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="birth" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="birth" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="appeal" data-file-name="Appeal">
+              <label class="document-check"><input type="checkbox" data-item="appeal" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docAppeal">Preference-change appeal</strong><small data-i18n="detailAppeal">Only if you want to change, add or remove degree preferences.</small></span><code>Appeal.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="appeal" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="appeal" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="appeal" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="appeal" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="bridging" data-file-name="Bridging">
+              <label class="document-check"><input type="checkbox" data-item="bridging" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docBridging">Bridging course results</strong><small data-i18n="detailBridging">Only if you followed a bridging course.</small></span><code>Bridging.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="bridging" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="bridging" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="bridging" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="bridging" role="status" aria-live="polite"></p>
+            </li>
+            <li class="document-item" data-document="request" data-file-name="Request Letter">
+              <label class="document-check"><input type="checkbox" data-item="request" /><span class="checkmark" aria-hidden="true"></span><span class="document-copy"><strong data-i18n="docRequest">Other application amendment request</strong><small data-i18n="detailRequest">Only if you need to request another change to your application.</small></span><code>Request Letter.pdf</code></label>
+              <div class="file-tools"><label class="photo-button"><input type="file" accept="image/*" multiple data-photo-input="request" /><span data-i18n="choosePhotos">Choose photos</span></label><button class="create-pdf" type="button" data-create-pdf="request" disabled data-i18n="createPdf">Create PDF</button></div>
+              <ul class="photo-preview" data-photo-preview="request" aria-label="Selected photos"></ul><p class="upload-status" data-upload-status="request" role="status" aria-live="polite"></p>
+            </li>
+          </ol>
+          <div class="email-note">
+            <span class="mail-icon" aria-hidden="true">@</span>
+            <div><strong data-i18n="sendScansTitle">Send your files to the address in your invitation.</strong><p data-i18n="sendScansText">The interview email shared for this guide says to email PDFs or photos to ifsls5@mail.mohe.gov.lk one hour before the interview. Keep every original with you. Follow your own invitation if it says something different.</p></div>
+          </div>
+          <section class="email-template" aria-labelledby="email-template-title">
+            <div class="email-template-heading">
+              <div><p class="eyebrow" data-i18n="emailTemplateEyebrow">READY-TO-USE EMAIL</p><h3 id="email-template-title" data-i18n="emailTemplateTitle">Copy this email for your interview</h3><p data-i18n="emailTemplateIntro">Replace the bracketed details, attach your files, and send it one hour before your interview.</p></div>
+              <span class="template-badge" data-i18n="emailLanguageNote">Sample in English</span>
+            </div>
+            <p class="email-recipient"><strong data-i18n="emailToLabel">To</strong><a href="mailto:ifsls5@mail.mohe.gov.lk">ifsls5@mail.mohe.gov.lk</a><button class="copy-button" type="button" data-copy-target="email-recipient" data-i18n="copyRecipient">Copy address</button></p>
+            <div class="email-template-field">
+              <label for="email-subject" data-i18n="emailSubjectLabel">Subject</label>
+              <div class="copy-control"><textarea id="email-subject" rows="2" readonly>IFSLS Online Interview Documents - [Applicant Name] - [Interview Date]</textarea><button class="copy-button" type="button" data-copy-target="email-subject" data-i18n="copySubject">Copy subject</button></div>
+            </div>
+            <div class="email-template-field">
+              <label for="email-body" data-i18n="emailBodyLabel">Email body</label>
+              <div class="copy-control copy-control-body"><textarea id="email-body" rows="17" readonly>Dear IFSLS Interview Team,
+
+Please find attached my scanned documents for the online interview.
+
+Applicant name: [Your full name]
+Interview date and time: [Date and time]
+
+Attached documents:
+- Application.pdf
+- Application 1.pdf
+- NIC.pdf
+- AL.pdf
+- OL.pdf
+- SL.pdf
+- BC.pdf
+- Appeal.pdf (if applicable)
+- Bridging.pdf (if applicable)
+- Request Letter.pdf (if applicable)
+
+I will keep all original documents with me during the interview.
+
+Thank you,
+[Your full name]
+[Contact number]</textarea><button class="copy-button" type="button" data-copy-target="email-body" data-i18n="copyBody">Copy email body</button></div>
+            </div>
+            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </section>
+
+      <section class="pdf-section section-wrap" aria-labelledby="pdf-title">
+        <div class="pdf-mark" aria-hidden="true"><span>PDF</span><span>↗</span></div>
+        <div class="pdf-copy"><p class="eyebrow" data-i18n="scanEyebrow">MAKE YOUR DIGITAL COPIES</p><h2 id="pdf-title" data-i18n="scanTitle">Check your PDF before sending</h2><p data-i18n="scanText">Open the downloaded PDF and make sure every page is upright, readable and complete. Create one PDF for each document and keep the original papers for your interview.</p></div>
+      </section>
+
+      <section class="feedback-section" id="feedback" aria-labelledby="feedback-title">
+        <div class="section-wrap feedback-inner">
+          <div class="feedback-heading">
+            <p class="eyebrow" data-i18n="feedbackEyebrow">CONTACT STUDENT SUPPORT</p>
+            <h2 id="feedback-title" data-i18n="feedbackTitle">Need help or want to share feedback?</h2>
+            <p data-i18n="feedbackIntro">Send a question about your application, ask for document help, or share feedback. We can reply to your email.</p>
+          </div>
+          <form id="feedback-form">
+            <div class="feedback-fields">
+              <label for="feedback-name"><span data-i18n="feedbackName">Your name</span><input id="feedback-name" name="name" type="text" autocomplete="name" maxlength="100" required /></label>
+              <label for="feedback-email"><span data-i18n="feedbackEmail">Email address</span><input id="feedback-email" name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+              <label for="feedback-topic"><span data-i18n="feedbackTopic">What do you need help with?</span><select id="feedback-topic" name="category" required><option value="" disabled selected data-i18n="feedbackTopicChoose">Choose a topic</option><option value="application" data-i18n="feedbackTopicApplication">Application question</option><option value="documents" data-i18n="feedbackTopicDocuments">Document help</option><option value="feedback" data-i18n="feedbackTopicGeneral">Website feedback or suggestion</option></select></label>
+              <label class="feedback-message" for="feedback-message"><span data-i18n="feedbackMessage">Your message</span><textarea id="feedback-message" name="feedback" rows="4" minlength="5" maxlength="2000" required></textarea></label>
+            </div>
+            <p class="feedback-privacy" data-i18n="feedbackPrivacy">Your name, email, topic and message are saved in the support database so the team can respond. Please do not include your NIC number or private documents.</p>
+            <div class="feedback-submit-row"><button class="button button-primary" id="feedback-submit" type="submit" data-i18n="feedbackSubmit">Send to student support</button><p id="feedback-status" role="status" aria-live="polite"></p></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="support-section" id="support" aria-labelledby="support-title">
+        <div class="section-wrap support-inner">
+          <div><p class="eyebrow eyebrow-light" data-i18n="supportEyebrow">STILL NEED A HAND?</p><h2 id="support-title" data-i18n="supportTitle">Need help? Ask a question.</h2><p class="support-copy" data-i18n="supportText">Use the contact form for application questions or document help. Do not send private documents over WhatsApp.</p><a class="support-form-link" href="#feedback"><span data-i18n="goToContactForm">Go to the contact form</span><span aria-hidden="true">↑</span></a></div>
+          <div class="support-actions">
+            <a class="button button-whatsapp is-disabled" id="whatsapp-link" href="#support" aria-disabled="true" title="WhatsApp support number has not been supplied">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.2 9.7a6.2 6.2 0 0 1-9.1 5.5L3 16l.8-4a6.2 6.2 0 1 1 12.4-2.3ZM7.4 7.1c.2-.4.4-.4.6-.4h.4c.1 0 .3 0 .4.3l.6 1.4c.1.2.1.3 0 .5l-.4.5c-.2.1-.2.3-.1.4.1.2.5.8 1.1 1.2.7.6 1.2.8 1.4.9.2.1.3.1.4-.1l.6-.7c.1-.2.3-.2.5-.1l1.3.6c.2.1.4.2.4.3s-.1.7-.4 1c-.3.4-.8.6-1.3.6-.4 0-1-.1-1.8-.5-.9-.4-1.6-1-2.3-1.7-.6-.7-1-1.4-1.2-2-.2-.6-.2-1.1-.1-1.5l.4-.7Z" /></svg>
+              <span data-i18n="whatsapp">WhatsApp</span> <span aria-hidden="true">↗</span>
+            </a>
+            <p id="whatsapp-note" class="contact-note" data-i18n="whatsappNote">A WhatsApp support number has not been added yet.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <p data-i18n="footerNotice">Independent student guide. Confirm deadlines and requirements with official sources.</p>
+      <a href="https://studentloans.mohe.gov.lk/" target="_blank" rel="noreferrer" data-i18n="footerOfficial">Official IFSLS portal ↗</a>
+    </footer>
+  </body>
+</html>
