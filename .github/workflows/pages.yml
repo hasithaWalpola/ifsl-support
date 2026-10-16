@@ -29,7 +29,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site/vendor
-          cp index.html styles.css app.js logo.svg _site/
+          cp index.html styles.css app.js logo.svg CNAME _site/
           cp vendor/jspdf.umd.min.js _site/vendor/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

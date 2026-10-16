@@ -17,6 +17,10 @@ GitHub Pages serves the static site. Google Apps Script receives support request
 
 The Apps Script URL is public configuration, not a password. The spreadsheet itself should remain private. Until the endpoint is set, the contact form displays a setup message and no requests are sent. GitHub Pages has no Node server or SQLite; use the Render instructions below instead if you prefer the existing SQLite backend.
 
+### Custom domain
+
+This repository is configured for `ifsl-support.technologyforvillage.lk`. At the DNS provider for `technologyforvillage.lk`, replace any existing record for `ifsl-support` with a CNAME record pointing to `hasithawalpola.github.io`. Do not change the parent domain or unrelated records. GitHub Pages can issue HTTPS after DNS propagates; then enable **Enforce HTTPS** in the repository's Pages settings. A DNS lookup currently shows an A record for this subdomain, so that record must be changed before the custom URL will point to Pages.
+
 ## Host on Render
 
 1. Push this project to a GitHub repository.
