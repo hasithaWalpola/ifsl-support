@@ -1,5 +1,5 @@
 const SUPPORT_WHATSAPP_NUMBER = "";
-const GOOGLE_SHEETS_ENDPOINT = "";
+const GOOGLE_SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycby1gdWT6fuVZu9aovIgpG4Y1wXYS1TpI3UGA4sjiUZq6YHtuLUxncvwTDHMTrEBlzaP0A/exec";
 const checklistStorageKey = "loan-ready-ifsls-checklist-v1";
 const languageStorageKey = "loan-ready-language";
 const maximumPhotosPerDocument = 8;
